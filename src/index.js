@@ -1,1 +1,1 @@
-export { PACKAGE } from "./PACKAGE"
+export { div } from './html.js'
