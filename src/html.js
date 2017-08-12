@@ -1,12 +1,17 @@
-var h = require('hyperapp').h
+import { h } from "hyperapp"
 
-var TAG_NAMES = ['div', 'h1']
+{% for tag in htmlTags %}
+export function {{ tag }}(props, children) {
+  return h("{{ tag }}", props, children)
+}
+{% endfor %}
 
-TAG_NAMES.forEach(function(tag) {
-  Object.defineProperty(exports, tag, { value: function() {
-    var args = [], len = arguments.length
-    while (len--) args[len] = arguments[len]
-
-    return h.apply(void 0, [tag].concat(args))
-  }})
-})
+export default function factory(h) {
+  return {
+  {% for tag in htmlTags %}
+    {{ tag }}: function {{ tag }}(props, children) {
+      return h("{{ tag }}", props, children)
+    }{% if !loop.last %},{% endif %}
+  {% endfor %}
+  }
+}

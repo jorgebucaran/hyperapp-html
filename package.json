@@ -2,9 +2,9 @@
   "name": "hyperapp-PACKAGE",
   "description": "A virgo HyperApp package starter",
   "version": "0.0.1",
-  "main": "dist/PACKAGE.js",
-  "jsnext:main": "src/index.js",
-  "module": "src/index.js",
+  "main": "dist/html.js",
+  "jsnext:main": "src/html.js",
+  "module": "src/html.js",
   "license": "MIT",
   "repository": "YOU/hyperapp-PACKAGE",
   "files": [
@@ -22,8 +22,8 @@
     "PACKAGE"
   ],
   "scripts": {
-    "test": "jest --coverage --no-cache",
-    "build": "rollup -cm -n html -f umd -i src/index.js -o dist/html.js",
+    "test": "jest --no-cache",
+    "build": "rollup -m -n html -f umd -i src/html.js -o dist/html.js",
     "prepublish": "npm run build",
     "format": "prettier --semi false --write 'src/**/*.js'",
     "release": "npm run build && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
@@ -38,6 +38,7 @@
     "jest": "^20.0.4",
     "prettier": "~1.4.1",
     "rollup": "^0.41.6",
-    "rollup-plugin-uglify": "^2.0.1"
+    "rollup-plugin-uglify": "^2.0.1",
+    "swig": "^1.4.2"
   }
 }
