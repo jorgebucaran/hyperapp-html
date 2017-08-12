@@ -1,58 +1,79 @@
-# hyperapp-package
-[![Travis CI](https://img.shields.io/travis/YOU/hyperapp-PACKAGE/master.svg)](https://travis-ci.org/YOU/hyperapp-PACKAGE)
-[![Codecov](https://img.shields.io/codecov/c/github/YOU/hyperapp-PACKAGE/master.svg)](https://codecov.io/gh/YOU/hyperapp-PACKAGE)
-[![npm](https://img.shields.io/npm/v/hyperapp-PACKAGE.svg)](https://www.npmjs.org/package/PACKAGE)
+# hyperapp-html
+[![Travis CI](https://img.shields.io/travis/Swizz/hyperapp-html/master.svg)](https://travis-ci.org/Swizz/hyperapp-html)
+[![Codecov](https://img.shields.io/codecov/c/github/Swizz/hyperapp-html/master.svg)](https://codecov.io/gh/Swizz/hyperapp-html)
+[![npm](https://img.shields.io/npm/v/hyperapp-html.svg)](https://www.npmjs.org/package/hyperapp-html)
 [![Slack](https://hyperappjs.herokuapp.com/badge.svg)](https://hyperappjs.herokuapp.com "Join us")
 
-hyperapp-package is virgo HyperApp package starter.
+Html helpers for hyperapp and every `h`.
 ## Installation
 
 Using [npm](https://npmjs.com):
 
 <pre>
-npm i <a href="https://www.npmjs.com/package/hyperapp-PACKAGE">hyperapp-PACKAGE</a>
+npm i <a href="https://www.npmjs.com/package/hyperapp-html">hyperapp-html</a>
 </pre>
 
 Then setup a [build pipeline](https://github.com/hyperapp/hyperapp/blob/master/docs/getting-started.md#build-pipeline) and import it.
 
 ```jsx
-import { WHATEVER } from "hyperapp-PACKAGE"
+import { div, h1 } from "hyperapp-html"
 ```
 
 Using a CDN:
 
 ```html
-<script src="https://unpkg.com/hyperapp-PACKAGE"></script>
+<script src="https://unpkg.com/hyperapp-html"></script>
 ```
 
-Then access the WHATEVER in the global scope as <samp>WHATEVER</samp>.
+Then access the all hmtl tags or the factory in the global scope as <samp>div</samp>, <samp>h1</samp>, etc...
 
 ## Usage
 
 ```jsx
-app({
-})
+const vnode = h1({ id: "title" }, "Hi.")
 ```
 
 ## Example
 
-[Try it online](PLEASE ADD A LIVE PLAYGROUND)
+<!-- [Try it online](PLEASE ADD A LIVE PLAYGROUND) -->
 
 ```jsx
 app({
+  state: {
+    title: "Hi."
+  },
+  view: state => div({}, [
+    h1(null, state.title)
+  ])
 })
 ```
 
 ## API
 
-### group
-#### name
+### Tags
+#### tagname
 
-Type: ...
+Type: (props: object, children: vnode[]) => vnode
 
-Desc.
+Call the proper `h` to return a vnode according to the tag name.
 
+```jsx
+const vnode = tagname({ id: "title" }, "Hi.")
+```
+
+### Factory
+#### html
+
+Type: (h: function) => tagsObject
+
+Return a calalog of html helpers that call the given `h` then return a vnode.
+
+```jsx
+const { tagname } = html(h)
+
+const vnode = tagname({ id: "title" }, "Hi.")
+```
 
 ## License
 
-hyperapp-PACKAGE is MIT licensed (by default). See [LICENSE](LICENSE.md).
+hyperapp-html is MIT licensed. See [LICENSE](LICENSE.md).
