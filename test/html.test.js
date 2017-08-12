@@ -1,5 +1,5 @@
 import { h } from "hyperapp"
-import html, { div, h1 } from "../dist/html"
+import html, { div, h1 } from "../dist/html.js"
 
 test("hyperapp h similarity", () => {
   expect(
