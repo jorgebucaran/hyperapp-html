@@ -27,7 +27,7 @@ Using a CDN:
 <script src="https://unpkg.com/hyperapp-html"></script>
 ```
 
-Then access the all hmtl tags or the factory in the global scope as <samp>div</samp>, <samp>h1</samp>, etc...
+Then access the all hmtl tags or the factory from `hyperappHtml` in the global scope as <samp>div</samp>, <samp>h1</samp>, etc...
 
 ## Usage
 
