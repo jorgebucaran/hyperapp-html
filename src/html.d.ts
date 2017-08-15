@@ -40,6 +40,6 @@ export interface h<VirtualNode = {}, Data = {}> {
 /** Return a calalog of html helpers that call the given `h` then return a vnode.
  * @param h  Any valid hyperscript h function
  */
-export function factory<VirtualNode = {}, Data = {}>(
+export default function factory<VirtualNode = {}, Data = {}>(
   h: h<VirtualNode, Data>
 ): html
