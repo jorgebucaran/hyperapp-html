@@ -1,6 +1,4 @@
 # hyperapp-html
-[![Travis CI](https://img.shields.io/travis/Swizz/hyperapp-html/master.svg)](https://travis-ci.org/Swizz/hyperapp-html)
-[![Codecov](https://img.shields.io/codecov/c/github/Swizz/hyperapp-html/master.svg)](https://codecov.io/gh/Swizz/hyperapp-html)
 [![npm](https://img.shields.io/npm/v/hyperapp-html.svg)](https://www.npmjs.org/package/hyperapp-html)
 [![Slack](https://hyperappjs.herokuapp.com/badge.svg)](https://hyperappjs.herokuapp.com "Join us")
 
