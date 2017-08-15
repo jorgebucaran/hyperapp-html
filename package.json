@@ -5,6 +5,7 @@
   "main": "dist/html.dist.js",
   "jsnext:main": "dist/html.js",
   "module": "dist/html.js",
+  "types": "dist/html.d.ts",
   "license": "MIT",
   "repository": "Swizz/hyperapp-html",
   "files": [
@@ -23,12 +24,12 @@
   ],
   "scripts": {
     "test": "jest --no-cache",
-    "compile": "swig render -j vars.json src/html.js > dist/html.js",
+    "compile": "rimraf dist && swig render -j vars.json src/html.* -o dist",
     "bundle": "rollup -n html -f umd -i dist/html.js -o dist/html.dist.js",
     "minify": "uglifyjs dist/html.dist.js -o dist/html.dist.js --mangle --compress warnings=false --pure-funcs=Object.defineProperty -p relative --source-map dist/html.js.map",
     "build": "npm run compile && npm run bundle && npm run minify",
     "prepublish": "npm run build",
-    "format": "prettier --semi false --write 'src/**/*.js'",
+    "format": "prettier --semi false --write 'src/**/*.js' 'src/**/*.ts'",
     "release": "npm run build && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
   "babel": {
@@ -37,12 +38,13 @@
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
     "jest": "^20.0.4",
-    "prettier": "~1.4.1",
-    "rollup": "^0.41.6",
+    "prettier": "^1.5.3",
+    "rimraf": "^2.6.1",
+    "rollup": "^0.47.4",
     "swig": "^1.4.2",
     "uglify-js": "^3.0.27"
   },
   "dependencies": {
-    "hyperapp": "^0.10.1"
+    "hyperapp": "^0.11.0"
   }
 }
