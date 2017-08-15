@@ -1,7 +1,7 @@
 {
   "name": "hyperapp-html",
   "description": "Html helpers for hyperapp and every `h`",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "dist/html.dist.js",
   "jsnext:main": "dist/html.js",
   "module": "dist/html.js",
