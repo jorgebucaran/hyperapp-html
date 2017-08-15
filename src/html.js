@@ -9,7 +9,7 @@ export function {{ tag }}(props, children) {
 export default function factory(h) {
   return {
     {% for tag in htmlTags %}
-    {{ tag }}: function tag(props, children) {
+    {{ tag }}: function {{ tag }}(props, children) {
       return h("{{ tag }}", props, children)
     }{% if !loop.last %},{% endif %}
     {% endfor %}
