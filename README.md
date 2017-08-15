@@ -5,6 +5,10 @@
 [![Slack](https://hyperappjs.herokuapp.com/badge.svg)](https://hyperappjs.herokuapp.com "Join us")
 
 Html helpers for hyperapp and every `h`.
+
+### Note
+This library is builded using meta programing through template engine to allow the use of tree shaking and a better optimisation.
+
 ## Installation
 
 Using [npm](https://npmjs.com):
