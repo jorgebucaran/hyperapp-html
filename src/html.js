@@ -2,7 +2,7 @@ import { h } from "hyperapp"
 
 const hh = function (h) {
   return function (tag, props, children) {
-    return typeof props === 'object' && !Array.isArray(props) && props !== null
+    return typeof props === 'object' && !Array.isArray(props)
       ? h(tag, props, children)
       : h(tag, null, props)
   }
