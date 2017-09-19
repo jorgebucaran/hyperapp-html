@@ -45,7 +45,8 @@ app({
     title: "Hi."
   },
   view: state => div({}, [
-    h1(null, state.title)
+    h1(null, state.title),
+    h2("World")
   ])
 })
 ```
