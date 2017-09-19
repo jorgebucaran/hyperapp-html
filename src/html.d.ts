@@ -9,6 +9,9 @@ export function {{ tag }}<VirtualNode = {}, Data = {}>(
   data?: Data,
   children?: VirtualNode | VirtualNode[]
 ): VirtualNode
+export function {{ tag }}<VirtualNode = {}, Data = {}>(
+  children?: VirtualNode | VirtualNode[]
+): VirtualNode
 {% endfor %}
 
 export interface html<VirtualNode = {}, Data = {}> {
@@ -19,6 +22,9 @@ export interface html<VirtualNode = {}, Data = {}> {
    */
   {{ tag }}(
     data?: Data,
+    children?: VirtualNode | VirtualNode[]
+  ): VirtualNode
+  {{ tag }}(
     children?: VirtualNode | VirtualNode[]
   ): VirtualNode
   {% endfor %}
