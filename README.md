@@ -37,17 +37,28 @@ const vnode = h1({ id: "title" }, "Hi.")
 
 ## Example
 
-<!-- [Try it online](PLEASE ADD A LIVE PLAYGROUND) -->
+[Try it online](https://codepen.io/anon/pen/yzeQgg?editors=0010)
 
 ```jsx
 app({
   state: {
-    title: "Hi."
+    count: 0
   },
-  view: state => div({}, [
-    h1(null, state.title),
-    h2("World")
-  ])
+  view: (state, actions) =>
+    main([
+      h1({}, state.count),
+      button({
+        onclick: actions.down,
+        disabled: state.count <= 0
+      }, "ー"),
+      button({
+        onclick: actions.up
+      }, "＋")
+    ]),
+  actions: {
+    down: state => ({ count: state.count - 1 }),
+    up: state => ({ count: state.count + 1 })
+  }
 })
 ```
 
