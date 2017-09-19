@@ -25,6 +25,38 @@ test("hyperapp h similarity", () => {
   )
 })
 
+test("optional props", () => {
+
+  expect(
+    div()
+  ).toEqual(
+    h("div", null, [])
+  )
+
+  expect(
+    div(null, "Hi.")
+  ).toEqual(
+    h("div", null, "Hi.")
+  )
+
+  expect(
+    div("Hi.")
+  ).toEqual(
+    h("div", null, ['Hi.'])
+  )
+
+  expect(
+    div([
+      h1({ id: "title" }, "Hi.")
+    ])
+  ).toEqual(
+    h("div", null, [
+      h("h1", { id: "title" }, "Hi.")
+    ])
+  )
+
+})
+
 test("factory to use the right h", () => {
   const h = jest.fn(
     (tag, props, children) => ({ tag, props, children })
