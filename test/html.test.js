@@ -40,9 +40,21 @@ test("optional props", () => {
   )
 
   expect(
+    div(null, 1)
+  ).toEqual(
+    h("div", null, 1)
+  )
+
+  expect(
     div("Hi.")
   ).toEqual(
-    h("div", null, ['Hi.'])
+    h("div", null, ["Hi."])
+  )
+
+  expect(
+    div(1)
+  ).toEqual(
+    h("div", null, [1])
   )
 
   expect(
@@ -55,20 +67,4 @@ test("optional props", () => {
     ])
   )
 
-})
-
-test("factory to use the right h", () => {
-  const h = jest.fn(
-    (tag, props, children) => ({ tag, props, children })
-  )
-
-  const { h1 } = html(h)
-
-  expect(
-    h1({ id: "title" }, "Hi.")
-  ).toEqual(
-    h("h1", { id: "title" }, "Hi.")
-  )
-
-  expect(h.mock.calls.length).toBe(2)
 })
