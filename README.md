@@ -2,7 +2,7 @@
 [![npm](https://img.shields.io/npm/v/hyperapp-html.svg)](https://www.npmjs.org/package/hyperapp-html)
 [![Slack](https://hyperappjs.herokuapp.com/badge.svg)](https://hyperappjs.herokuapp.com "Join us")
 
-Html helpers for hyperapp and every `h`.
+Html helpers for hyperapp `h`.
 
 ### Note
 This library is builded using meta programing through template engine to allow the use of tree shaking and a better optimisation.
@@ -27,7 +27,7 @@ Using a CDN:
 <script src="https://unpkg.com/hyperapp-html"></script>
 ```
 
-Then access the all hmtl tags or the factory from `hyperappHtml` in the global scope as <samp>div</samp>, <samp>h1</samp>, etc...
+Then access the all hmtl tags from `hyperappHtml` in the global scope as <samp>hyperappHtml.div</samp>, <samp>hyperappHtml.h1</samp>, etc...
 
 ## Usage
 
@@ -69,22 +69,9 @@ app({
 
 Type: (props: object, children: vnode[]) => vnode
 
-Call the proper `h` to return a vnode according to the tag name.
+Call `h` to return a vnode according to the tag name.
 
 ```jsx
-const vnode = tagname({ id: "title" }, "Hi.")
-```
-
-### Factory
-#### html
-
-Type: (h: function) => tagsObject
-
-Return a calalog of html helpers that call the given `h` then return a vnode.
-
-```jsx
-const { tagname } = html(h)
-
 const vnode = tagname({ id: "title" }, "Hi.")
 ```
 
