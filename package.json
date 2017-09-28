@@ -1,7 +1,7 @@
 {
   "name": "hyperapp-html",
-  "description": "Html helpers for hyperapp and every `h`",
-  "version": "1.1.0",
+  "description": "Html helpers for hyperapp `h`",
+  "version": "2.0.0",
   "main": "dist/html.dist.js",
   "jsnext:main": "dist/html.js",
   "module": "dist/html.js",
@@ -20,7 +20,8 @@
     "virtual-dom",
     "helpers",
     "h",
-    "html"
+    "html",
+    "hyperapp"
   ],
   "scripts": {
     "test": "jest --no-cache",
