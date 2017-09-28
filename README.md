@@ -1,5 +1,5 @@
-# hyperapp-html
-[![npm](https://img.shields.io/npm/v/hyperapp-html.svg)](https://www.npmjs.org/package/hyperapp-html)
+# @hyperapp/html
+[![npm](https://img.shields.io/npm/v/@hyperapp/html.svg)](https://www.npmjs.org/package/@hyperapp/html)
 [![Slack](https://hyperappjs.herokuapp.com/badge.svg)](https://hyperappjs.herokuapp.com "Join us")
 
 Html helpers for hyperapp `h`.
@@ -12,19 +12,19 @@ This library is builded using meta programing through template engine to allow t
 Using [npm](https://npmjs.com):
 
 <pre>
-npm i <a href="https://www.npmjs.com/package/hyperapp-html">hyperapp-html</a>
+npm i <a href="https://www.npmjs.com/package/@hyperapp/html">@hyperapp/html</a>
 </pre>
 
 Then setup a [build pipeline](https://github.com/hyperapp/hyperapp/blob/master/docs/getting-started.md#build-pipeline) and import it.
 
 ```jsx
-import { div, h1 } from "hyperapp-html"
+import { div, h1 } from "@hyperapp/html"
 ```
 
 Using a CDN:
 
 ```html
-<script src="https://unpkg.com/hyperapp-html"></script>
+<script src="https://unpkg.com/@hyperapp/html"></script>
 ```
 
 Then access the all hmtl tags from `hyperappHtml` in the global scope as <samp>hyperappHtml.div</samp>, <samp>hyperappHtml.h1</samp>, etc...
@@ -77,4 +77,4 @@ const vnode = tagname({ id: "title" }, "Hi.")
 
 ## License
 
-hyperapp-html is MIT licensed. See [LICENSE](LICENSE.md).
+@hyperapp/html is MIT licensed. See [LICENSE](LICENSE.md).

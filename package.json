@@ -1,5 +1,5 @@
 {
-  "name": "hyperapp-html",
+  "name": "@hyperapp/html",
   "description": "Html helpers for hyperapp `h`",
   "version": "2.0.0",
   "main": "dist/html.dist.js",
@@ -7,7 +7,7 @@
   "module": "dist/html.js",
   "types": "dist/html.d.ts",
   "license": "MIT",
-  "repository": "Swizz/hyperapp-html",
+  "repository": "hyperapp/html",
   "files": [
     "src",
     "dist"
