@@ -1,4 +1,5 @@
 # @hyperapp/html
+[![Travis CI](https://img.shields.io/travis/hyperapp/html/master.svg)](https://travis-ci.org/hyperapp/html)
 [![npm](https://img.shields.io/npm/v/@hyperapp/html.svg)](https://www.npmjs.org/package/@hyperapp/html)
 [![Slack](https://hyperappjs.herokuapp.com/badge.svg)](https://hyperappjs.herokuapp.com "Join us")
 
@@ -27,7 +28,7 @@ Using a CDN:
 <script src="https://unpkg.com/@hyperapp/html"></script>
 ```
 
-Then access the all hmtl tags from `hyperappHtml` in the global scope as <samp>hyperappHtml.div</samp>, <samp>hyperappHtml.h1</samp>, etc...
+Then access the all hmtl tags from `html` in the global scope as <samp>html.div</samp>, <samp>html.h1</samp>, etc...
 
 ## Usage
 
