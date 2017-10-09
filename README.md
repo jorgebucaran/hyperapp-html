@@ -38,7 +38,7 @@ const vnode = h1({ id: "title" }, "Hi.")
 
 ## Example
 
-[Try it online](https://codepen.io/anon/pen/yzeQgg?editors=0010)
+[Try it online](https://codepen.io/Swizz540/pen/VMXVve?editors=0010)
 
 ```jsx
 app({
