@@ -26,7 +26,7 @@
   "scripts": {
     "test": "jest --no-cache",
     "compile": "rimraf dist && swig render -j vars.json src/html.* -o dist",
-    "bundle": "rollup -n hyperappHtml -f umd -i dist/html.js -g hyperapp:hyperapp -o dist/html.dist.js",
+    "bundle": "rollup -n html -f umd -i dist/html.js -g hyperapp:hyperapp -o dist/html.dist.js",
     "minify": "uglifyjs dist/html.dist.js -o dist/html.dist.js --mangle --compress warnings=false --pure-funcs=Object.defineProperty -p relative --source-map dist/html.js.map",
     "build": "npm run compile && npm run bundle && npm run minify",
     "prepublish": "npm run build",
