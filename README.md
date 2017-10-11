@@ -1,9 +1,10 @@
 # @hyperapp/html
 [![Travis CI](https://img.shields.io/travis/hyperapp/html/master.svg)](https://travis-ci.org/hyperapp/html)
+[![Codecov](https://img.shields.io/codecov/c/github/hyperapp/html/master.svg)](https://codecov.io/gh/hyperapp/html)
 [![npm](https://img.shields.io/npm/v/@hyperapp/html.svg)](https://www.npmjs.org/package/@hyperapp/html)
 [![Slack](https://hyperappjs.herokuapp.com/badge.svg)](https://hyperappjs.herokuapp.com "Join us")
 
-Html utility functions for [Hyperapp](https://github.com/hyperapp/hyperapp). This library is an alternative to the built-in `h()` or JSX, Hyperx, etc.
+Html helper functions for [Hyperapp](https://github.com/hyperapp/hyperapp). Use as an alternative to the built-in `h()` function.
 
 ## Installation
 
@@ -19,7 +20,7 @@ Then with a module bundler like [Rollup](https://github.com/rollup/rollup) or [W
 import { h1, div, a } from "@hyperapp/html"
 ```
 
-Or download directly from [unpkg](https://unpkg.com/@hyperapp/html@0.4.0/dist/html.dist.js) or [jsDelivr](https://cdn.jsdelivr.net/npm/@hyperapp/html@latest/dist/html.dist.js).
+Or download directly from [unpkg](https://unpkg.com/@hyperapp/html@latest/dist/html.dist.js) or [jsDelivr](https://cdn.jsdelivr.net/npm/@hyperapp/html@latest/dist/html.dist.js).
 
 ```html
 <script src="https://unpkg.com/@hyperapp/html"></script>
@@ -39,7 +40,7 @@ const node = h1({ id: "title" }, "Hi.")
 
 ## Example
 
-[Try it online](https://codepen.io/Swizz540/pen/VMXVve?editors=0010)
+[Try it Online](https://codepen.io/Swizz540/pen/VMXVve?editors=0010)
 
 ```jsx
 app({
