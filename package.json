@@ -1,6 +1,6 @@
 {
   "name": "@hyperapp/html",
-  "description": "Html helpers for hyperapp `h`",
+  "description": "Html helper functions for Hyperapp.",
   "version": "0.4.1",
   "main": "dist/html.dist.js",
   "jsnext:main": "dist/html.js",
@@ -12,32 +12,29 @@
     "src",
     "dist"
   ],
-  "author": "Swizz",
+  "author": "Quentin Gerodel",
   "keywords": [
-    "hyperx",
+    "hyperapp",
     "hyperscript",
-    "elm",
-    "virtual-dom",
-    "helpers",
-    "h",
     "html",
-    "hyperapp"
+    "vdom",
+    "h"
   ],
   "scripts": {
-    "test": "jest --no-cache",
+    "test": "jest --coverage --no-cache",
     "compile": "rimraf dist && swig render -j vars.json src/html.* -o dist",
     "bundle": "rollup -n html -f umd -i dist/html.js -g hyperapp:hyperapp -o dist/html.dist.js",
     "minify": "uglifyjs dist/html.dist.js -o dist/html.dist.js --mangle --compress warnings=false --pure-funcs=Object.defineProperty -p relative --source-map dist/html.js.map",
     "build": "npm run compile && npm run bundle && npm run minify",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "format": "prettier --semi false --write 'src/**/*.js' 'src/**/*.ts'",
     "release": "npm run build && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
   "babel": {
-    "presets": "es2015"
+    "presets": "env"
   },
   "devDependencies": {
-    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
     "jest": "^21.1.0",
     "prettier": "^1.7.0",
     "rimraf": "^2.6.2",
@@ -47,6 +44,6 @@
     "hyperapp": "^0.14.0"
   },
   "peerDependencies": {
-    "hyperapp": "^0.14.0"
+    "hyperapp": "^0.15.0"
   }
 }
