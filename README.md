@@ -3,37 +3,38 @@
 [![npm](https://img.shields.io/npm/v/@hyperapp/html.svg)](https://www.npmjs.org/package/@hyperapp/html)
 [![Slack](https://hyperappjs.herokuapp.com/badge.svg)](https://hyperappjs.herokuapp.com "Join us")
 
-Html helpers for hyperapp `h`.
-
-### Note
-This library is builded using meta programing through template engine to allow the use of tree shaking and a better optimisation.
+Html utility functions for [Hyperapp](https://github.com/hyperapp/hyperapp). This library is an alternative to the built-in `h()` or JSX, Hyperx, etc.
 
 ## Installation
 
-Using [npm](https://npmjs.com):
+Install with npm or Yarn.
 
 <pre>
 npm i <a href="https://www.npmjs.com/package/@hyperapp/html">@hyperapp/html</a>
 </pre>
 
-Then setup a [build pipeline](https://github.com/hyperapp/hyperapp/blob/master/docs/getting-started.md#build-pipeline) and import it.
+Then with a module bundler like [Rollup](https://github.com/rollup/rollup) or [Webpack](https://github.com/webpack/webpack), use as you would anything else.
 
 ```jsx
-import { div, h1 } from "@hyperapp/html"
+import { h1, div, a } from "@hyperapp/html"
 ```
 
-Using a CDN:
+Or download directly from [unpkg](https://unpkg.com/@hyperapp/html@0.4.0/dist/html.dist.js) or [jsDelivr](https://cdn.jsdelivr.net/npm/@hyperapp/html@latest/dist/html.dist.js).
 
 ```html
 <script src="https://unpkg.com/@hyperapp/html"></script>
 ```
 
-Then access the all hmtl tags from `html` in the global scope as <samp>html.div</samp>, <samp>html.h1</samp>, etc...
+The find the library in `window.html`.
+
+```jsx
+const { h1, div, a } = html
+```
 
 ## Usage
 
 ```jsx
-const vnode = h1({ id: "title" }, "Hi.")
+const node = h1({ id: "title" }, "Hi.")
 ```
 
 ## Example
@@ -51,29 +52,16 @@ app({
       button({
         onclick: actions.down,
         disabled: state.count <= 0
-      }, "ー"),
+      }, "—"),
       button({
         onclick: actions.up
-      }, "＋")
+      }, "+")
     ]),
   actions: {
     down: state => ({ count: state.count - 1 }),
     up: state => ({ count: state.count + 1 })
   }
 })
-```
-
-## API
-
-### Tags
-#### tagname
-
-Type: (props: object, children: vnode[]) => vnode
-
-Call `h` to return a vnode according to the tag name.
-
-```jsx
-const vnode = tagname({ id: "title" }, "Hi.")
 ```
 
 ## License
