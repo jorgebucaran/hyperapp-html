@@ -3,9 +3,9 @@ export as namespace hyperappHtml
 import { VNode } from "hyperapp"
 
 {% for tag in htmlTags %}
-/** Helper function that call `h` to return a {{ tag }} virtual node
- * @param props      Any valid HTML atributes, events, styles, and meta data
- * @param children  The children of the virtual node
+/** Utility function that calls `h` and returns a {{ tag }} VNode
+ * @param props     Any valid HTML atributes, events, styles, and meta data
+ * @param children  The VNode children
  */
 export function {{ tag }}<Props = {}>(
   props?: Props,
