@@ -26,7 +26,7 @@ Or download directly from [unpkg](https://unpkg.com/@hyperapp/html@latest/dist/h
 <script src="https://unpkg.com/@hyperapp/html"></script>
 ```
 
-The find the library in `window.html`.
+Then find the library in `window.html`.
 
 ```jsx
 const { h1, div, a } = html
