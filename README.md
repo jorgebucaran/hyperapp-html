@@ -2,7 +2,34 @@
 
 [![Travis CI](https://img.shields.io/travis/hyperapp/html/master.svg)](https://travis-ci.org/hyperapp/html) [![Codecov](https://img.shields.io/codecov/c/github/hyperapp/html/master.svg)](https://codecov.io/gh/hyperapp/html) [![npm](https://img.shields.io/npm/v/@hyperapp/html.svg)](https://www.npmjs.org/package/@hyperapp/html) [![Slack](https://hyperappjs.herokuapp.com/badge.svg)](https://hyperappjs.herokuapp.com "Join us")
 
-Html helper functions for [Hyperapp](https://github.com/hyperapp/hyperapp). Use as an alternative to the built-in `h()` function.
+Html helper functions for [Hyperapp](https://github.com/hyperapp/hyperapp). Use it as an alternative to JSX or the built-in `h()` function.
+
+[Try it Online](https://codepen.io/hyperapp/pen/MrBgMy)
+
+```jsx
+import { h, app } from "hyperapp"
+import { div, h1, button } from "@hyperapp/html"
+
+const state = {
+  count: 0
+}
+
+const actions = {
+  down: () => state => ({ count: state.count - 1 }),
+  up: () => state => ({ count: state.count + 1 })
+}
+
+const view = (state, actions) =>
+  div([
+    h1({}, state.count),
+    button({ onclick: actions.down }, "ー"),
+    button({ onclick: actions.up }, "＋")
+  ])
+
+const main = app(state, actions, view, document.body)
+```
+
+See [/vars.json](/vars.json) for the list of tags available to import into your file.
 
 ## Installation
 
@@ -32,39 +59,6 @@ If you prefer not to use a build system, you can load @hyperapp/html from [unpkg
   </script>
 </body>
 </html>
-```
-
-## Usage
-
-```jsx
-const node = h1({ id: "title" }, "Hi.")
-```
-
-## Example
-
-[Try it Online](https://codepen.io/Swizz540/pen/VMXVve?editors=0010)
-
-```jsx
-import { h, app } from "hyperapp"
-import { div, h1, button } from "hyperapp"
-
-const state = {
-  count: 0
-}
-
-const actions = {
-  down: state => ({ count: state.count - 1 }),
-  up: state => ({ count: state.count + 1 })
-}
-
-const view = (state, actions) =>
-  div([
-    h1({}, state.count),
-    button({ onclick: actions.down }, "—"),
-    button({ onclick: actions.up }, "+")
-  ])
-
-const main = app(state, actions, view, document.body)
 ```
 
 ## License
