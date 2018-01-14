@@ -1,7 +1,7 @@
 {
   "name": "@hyperapp/html",
   "description": "Html helper functions for Hyperapp.",
-  "version": "0.5.1",
+  "version": "1.0.0",
   "main": "dist/html.dist.js",
   "jsnext:main": "dist/html.js",
   "module": "dist/html.js",
