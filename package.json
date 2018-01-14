@@ -24,7 +24,7 @@
     "test": "jest --coverage --no-cache",
     "compile": "rimraf dist && swig render -j vars.json src/html.* -o dist",
     "bundle": "rollup -n html -f umd -i dist/html.js -g hyperapp:hyperapp -o dist/html.dist.js",
-    "minify": "uglifyjs dist/html.dist.js -o dist/html.dist.js --mangle --compress warnings=false --pure-funcs=Object.defineProperty -p relative --source-map dist/html.js.map",
+    "minify": "uglifyjs dist/html.dist.js -o dist/html.dist.js -mc pure_funcs=Object.defineProperty --source-map includeSources,url=html.dist.js.map",
     "build": "npm run compile && npm run bundle && npm run minify",
     "prepare": "npm run build",
     "format": "prettier --semi false --write 'src/**/*.js' 'src/**/*.ts'",
@@ -34,16 +34,16 @@
     "presets": "env"
   },
   "devDependencies": {
-    "babel-preset-env": "^1.6.0",
-    "jest": "^21.1.0",
-    "prettier": "^1.7.0",
+    "babel-preset-env": "^1.6.1",
+    "jest": "^22.0.6",
+    "prettier": "^1.10.2",
     "rimraf": "^2.6.2",
-    "rollup": "^0.50.0",
+    "rollup": "^0.54.0",
     "swig": "^1.4.2",
-    "uglify-js": "2.7.5",
-    "hyperapp": "^0.14.0"
+    "uglify-js": "3.3.6",
+    "hyperapp": "^1.0.1"
   },
   "peerDependencies": {
-    "hyperapp": "^0.15.0"
+    "hyperapp": "^1.0.1"
   }
 }
