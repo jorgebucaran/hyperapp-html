@@ -4,8 +4,6 @@
 
 Html helper functions for [Hyperapp](https://github.com/hyperapp/hyperapp). Use @hyperapp/html as an alternative to JSX or the <samp>hyperapp.h</samp> function.
 
-Here's a taste of how to use two of the most common effects for firing actions and making HTTP requests. The app displays inspiring quotes about design, fetching a new quote each time the user clicks on the current one. Go ahead and try it online here.
-
 This is a counter that can be incremented or decremented. Go ahead and [try it online](https://codepen.io/hyperapp/pen/MrBgMy?editors=0010). 
 
 ```jsx
