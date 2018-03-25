@@ -2,10 +2,9 @@
   "name": "@hyperapp/html",
   "description": "Html helper functions for Hyperapp.",
   "version": "1.0.1",
-  "main": "dist/html.dist.js",
-  "jsnext:main": "dist/html.js",
-  "module": "dist/html.js",
-  "types": "dist/html.d.ts",
+  "main": "dist/hyperappHtml.dist.js",
+  "module": "dist/hyperappHtml.js",
+  "types": "dist/hyperappHtml.d.ts",
   "license": "MIT",
   "repository": "hyperapp/html",
   "files": [
@@ -16,15 +15,13 @@
   "keywords": [
     "hyperapp",
     "hyperscript",
-    "html",
-    "vdom",
-    "h"
+    "html"
   ],
   "scripts": {
     "test": "jest --coverage --no-cache",
     "compile": "rimraf dist && swig render -j vars.json src/html.* -o dist",
-    "bundle": "rollup -n html -f umd -i dist/html.js -g hyperapp:hyperapp -o dist/html.dist.js",
-    "minify": "uglifyjs dist/html.dist.js -o dist/html.dist.js -mc pure_funcs=Object.defineProperty --source-map includeSources,url=html.dist.js.map",
+    "bundle": "rollup -n hyperappHtml -f umd -i dist/hyperappHtml.js -g hyperapp:hyperapp -o dist/hyperappHtml.dist.js",
+    "minify": "uglifyjs dist/hyperappHtml.js -o dist/hyperappHtml.js -mc pure_funcs=['Object.defineProperty'] --source-map includeSources,url=hyperappHtml.js.map",
     "build": "npm run compile && npm run bundle && npm run minify",
     "prepare": "npm run build",
     "format": "prettier --semi false --write 'src/**/*.js' 'src/**/*.ts'",
@@ -35,15 +32,15 @@
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.1",
-    "jest": "^22.0.6",
-    "prettier": "^1.10.2",
+    "jest": "^22.4.3",
+    "prettier": "^1.11.1",
     "rimraf": "^2.6.2",
-    "rollup": "^0.54.0",
+    "rollup": "^0.57.1",
     "swig": "^1.4.2",
-    "uglify-js": "3.3.6",
-    "hyperapp": "^1.0.1"
+    "uglify-js": "3.3.16",
+    "hyperapp": "^1.2.5"
   },
   "peerDependencies": {
-    "hyperapp": "^1.0.1"
+    "hyperapp": "^1.2.5"
   }
 }
