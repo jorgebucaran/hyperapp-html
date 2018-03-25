@@ -2,7 +2,7 @@
   "name": "@hyperapp/html",
   "description": "Html helper functions for Hyperapp.",
   "version": "1.1.0",
-  "main": "dist/html.dist.js",
+  "main": "dist/hyperappHtml.js",
   "module": "dist/html.js",
   "types": "dist/html.d.ts",
   "license": "MIT",
