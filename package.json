@@ -2,9 +2,9 @@
   "name": "@hyperapp/html",
   "description": "Html helper functions for Hyperapp.",
   "version": "1.0.1",
-  "main": "dist/hyperappHtml.dist.js",
-  "module": "dist/hyperappHtml.js",
-  "types": "dist/hyperappHtml.d.ts",
+  "main": "dist/html.dist.js",
+  "module": "dist/html.js",
+  "types": "dist/html.d.ts",
   "license": "MIT",
   "repository": "hyperapp/html",
   "files": [
@@ -20,7 +20,7 @@
   "scripts": {
     "test": "jest --coverage --no-cache",
     "compile": "rimraf dist && swig render -j vars.json src/html.* -o dist",
-    "bundle": "rollup -n hyperappHtml -f umd -i dist/hyperappHtml.js -g hyperapp:hyperapp -o dist/hyperappHtml.dist.js",
+    "bundle": "rollup -n hyperappHtml -f umd -i dist/html.js -g hyperapp:hyperapp -o dist/hyperappHtml.js",
     "minify": "uglifyjs dist/hyperappHtml.js -o dist/hyperappHtml.js -mc pure_funcs=['Object.defineProperty'] --source-map includeSources,url=hyperappHtml.js.map",
     "build": "npm run compile && npm run bundle && npm run minify",
     "prepare": "npm run build",
