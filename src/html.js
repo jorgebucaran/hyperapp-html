@@ -1,15 +1,15 @@
 import { h } from "hyperapp"
 
 function vnode(name) {
-  return function (props, children) {
-    return typeof props === "object" && !Array.isArray(props)
-      ? h(name, props, children)
-      : h(name, {}, props)
+  return function (attributes, children) {
+    return typeof attributes === "object" && !Array.isArray(attributes)
+      ? h(name, attributes, children)
+      : h(name, {}, attributes)
   }
 }
 
 {% for name in htmlTags %}
-export function {{ name }}(props, children) {
-  return vnode("{{ name }}")(props, children)
+export function {{ name }}(attributes, children) {
+  return vnode("{{ name }}")(attributes, children)
 }
 {% endfor %}

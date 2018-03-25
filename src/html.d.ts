@@ -4,13 +4,13 @@ import { VNode } from "hyperapp"
 
 {% for name in htmlTags %}
 /** Utility function that calls `h` and returns a {{ name }} VNode
- * @param props     Any valid HTML atributes, events, styles, and meta data
- * @param children  The VNode children
+ * @param attributes Any valid HTML atributes, events, styles, and meta data
+ * @param children   The VNode children
  */
-export function {{ name }}<Props = {}>(
-  props?: Props,
+export function {{ name }}<Attributes = {}>(
+  attributes?: Attributes,
   children?: string | number | Array<string | number | VNode<{}>>
-): VNode<Props>
+): VNode<Attributes>
 export function {{ name }}(
   children?: string | number | Array<string | number | VNode<{}>>
 ): VNode<{}>
