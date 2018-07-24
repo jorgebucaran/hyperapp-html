@@ -45,6 +45,30 @@ app(state, actions, view, document.body)
 See [/vars.json](/vars.json) for the list of available Html tags you can use in your program.
 
 
+## SVG
+
+Svg elements can also be created importing an extra module from `@hyperapp/html/dist/svg`.
+
+```jsx
+import { app } from "hyperapp"
+import { svg, circle, defs, linearGradient, stop } from "@hyperapp/html/dist/svg"
+
+const view = () =>
+  svg({ x: 0, y: 0, width: 600, height: 400, viewBox: "0 0 600 400" }, [
+    circle({ cx: 300, cy: 200, r: 60, fill: "url(#MyGradient)" }),
+    defs({}, [
+      linearGradient({ id: "MyGradient" }, [
+        stop({ offset: "5%", "stop-color": "#f60" }),
+        stop({ offset: "95%", "stop-color": "#ff6" })
+      ])
+    ])
+  ])
+
+app({}, {}, view, document.body)
+```
+
+Most non-deprecated svg elements are supported, check [/vars.json](/vars.json) for the list of available svg tags.
+
 ## License
 
 @hyperapp/html is MIT licensed. See [LICENSE](LICENSE.md).
