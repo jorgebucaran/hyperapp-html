@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "test": "jest --coverage --no-cache",
-    "compile": "rimraf dist && swig render -j vars.json src/html.* -o dist",
+    "compile": "rimraf dist && swig render -j vars.json src/* -o dist",
     "bundle": "rollup -n hyperappHtml -f umd -i dist/html.js -g hyperapp:hyperapp -o dist/hyperappHtml.js",
     "minify": "uglifyjs dist/hyperappHtml.js -o dist/hyperappHtml.js -mc pure_funcs=['Object.defineProperty'] --source-map includeSources,url=hyperappHtml.js.map",
     "build": "npm run compile && npm run bundle && npm run minify",
