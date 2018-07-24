@@ -15,14 +15,14 @@ test("same as h", () => {
     defs({}, [
       linearGradient({ id: "MyGradient" }, [
         stop({ offset: "5%", "stop-color": "#f60" }),
-        stop({ offset: "5%", "stop-color": "#ff6" })
+        stop({ offset: "95%", "stop-color": "#ff6" })
       ])
     ])
   ).toEqual(
     h("defs", {}, [
       h("linearGradient", { id: "MyGradient" }, [
         stop({ offset: "5%", "stop-color": "#f60" }),
-        stop({ offset: "5%", "stop-color": "#ff6" })
+        stop({ offset: "95%", "stop-color": "#ff6" })
       ])
     ])
   )
