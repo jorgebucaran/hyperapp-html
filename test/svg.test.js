@@ -1,5 +1,5 @@
 import { h } from "hyperapp"
-import * as svg from "../dist/svg"
+import * as svg from "../svg"
 import { svgTags } from "../vars.json"
 
 const { defs, linearGradient, stop, circle, g, text } = svg

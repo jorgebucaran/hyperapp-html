@@ -2,14 +2,15 @@
   "name": "@hyperapp/html",
   "description": "Html helper functions for Hyperapp.",
   "version": "1.1.1",
-  "main": "dist/hyperappHtml.js",
-  "module": "dist/html.js",
-  "types": "dist/html.d.ts",
+  "main": "html/hyperappHtml.js",
+  "module": "html/index.js",
+  "types": "html/index.d.ts",
   "license": "MIT",
   "repository": "hyperapp/html",
   "files": [
     "src",
-    "dist"
+    "html",
+    "svg"
   ],
   "author": "Quentin Gerodel",
   "keywords": [
@@ -19,9 +20,11 @@
   ],
   "scripts": {
     "test": "jest --coverage --no-cache",
-    "compile": "rimraf dist && swig render -j vars.json src/* -o dist",
-    "bundle": "rollup -n hyperappHtml -f umd -i dist/html.js -g hyperapp:hyperapp -o dist/hyperappHtml.js",
-    "minify": "uglifyjs dist/hyperappHtml.js -o dist/hyperappHtml.js -mc pure_funcs=['Object.defineProperty'] --source-map includeSources,url=hyperappHtml.js.map",
+    "compile-html": "rimraf html && swig render -j vars.json src/html/* -o html",
+    "compile-svg": "rimraf svg && swig render -j vars.json src/svg/* -o svg",
+    "compile": "npm run compile-html && npm run compile-svg",
+    "bundle": "rollup -n hyperappHtml -f umd -i html/index.js -g hyperapp:hyperapp -o html/hyperappHtml.js",
+    "minify": "uglifyjs html/hyperappHtml.js -o html/hyperappHtml.js -mc pure_funcs=['Object.defineProperty'] --source-map includeSources,url=hyperappHtml.js.map",
     "build": "npm run compile && npm run bundle && npm run minify",
     "prepare": "npm run build",
     "format": "prettier --semi false --write 'src/**/*.js' 'src/**/*.ts'",

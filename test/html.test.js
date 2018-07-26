@@ -1,5 +1,5 @@
 import { h } from "hyperapp"
-import * as html from "../dist/html"
+import * as html from "../html"
 import { htmlTags } from "../vars.json"
 
 const { div, h1 } = html
