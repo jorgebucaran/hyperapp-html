@@ -1,6 +1,6 @@
 import { h } from "hyperapp"
 import * as html from "../html"
-import { htmlTags } from "../vars.json"
+import { tags } from "../vars-html.json"
 
 const { div, h1 } = html
 
@@ -31,7 +31,7 @@ test("optional props", () => {
 })
 
 test("tags", () => {
-  htmlTags.map(tag => {
+  tags.map(tag => {
     expect(eval(`html.${tag}({ id: "foo" }, "bar")`)).toEqual(
       h(tag, { id: "foo" }, "bar")
     )

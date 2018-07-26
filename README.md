@@ -47,11 +47,11 @@ See [/vars.json](/vars.json) for the list of available Html tags you can use in 
 
 ## SVG
 
-Svg elements can also be created importing an extra module from `@hyperapp/html/dist/svg`.
+Svg elements can also be created importing an extra module from `@hyperapp/html/svg`.
 
 ```jsx
 import { app } from "hyperapp"
-import { svg, circle, defs, linearGradient, stop } from "@hyperapp/html/dist/svg"
+import { svg, circle, defs, linearGradient, stop } from "@hyperapp/html/svg"
 
 const view = () =>
   svg({ x: 0, y: 0, width: 600, height: 400, viewBox: "0 0 600 400" }, [

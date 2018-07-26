@@ -1,6 +1,6 @@
 import { h } from "hyperapp"
 import * as svg from "../svg"
-import { svgTags } from "../vars.json"
+import { tags } from "../vars-svg.json"
 
 const { defs, linearGradient, stop, circle, g, text } = svg
 
@@ -45,7 +45,7 @@ test("optional props", () => {
 })
 
 test("tags", () => {
-  svgTags.map(tag => {
+  tags.map(tag => {
     expect(eval(`svg.${tag}({ id: "bar"})`)).toEqual(h(tag, { id: "bar" }))
   })
 })

@@ -8,7 +8,7 @@ function vnode(name) {
   }
 }
 
-{% for name in htmlTags %}
+{% for name in tags %}
 export function {{ name }}(attributes, children) {
   return vnode("{{ name }}")(attributes, children)
 }
