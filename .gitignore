@@ -15,6 +15,5 @@ coverage
 
 # Dist
 *.gz
-dist/
-/html/
-/svg/
+html/
+svg/
