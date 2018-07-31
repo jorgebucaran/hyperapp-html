@@ -19,7 +19,7 @@
     "html"
   ],
   "scripts": {
-    "test": "jest --coverage --no-cache",
+    "test": "jest --coverage --no-cache --testURL=\"http://localhost/\"",
     "compile:html": "rimraf html && swig render -j vars-html.json src/* -o html",
     "compile:svg": "rimraf svg && swig render -j vars-svg.json src/* -o svg",
     "compile": "npm run compile:html && npm run compile:svg",
