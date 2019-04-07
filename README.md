@@ -19,6 +19,8 @@ Don't want to set up a build environment? Download @hyperapp/html from [unpkg.co
 
 Here is a counter that can be incremented or decremented. Go ahead and [try it online](https://codepen.io/jorgebucaran/pen/MrBgMy?editors=0010).
 
+The tags used in this package are pulled from the [WHATWG HTML Living Standard](https://html.spec.whatwg.org/multipage/indices.html#elements-3).
+
 ```jsx
 import { h, app } from "hyperapp"
 import { div, h1, button } from "@hyperapp/html"
